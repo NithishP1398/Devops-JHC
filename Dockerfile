@@ -1,5 +1,5 @@
 # Use an official OpenJDK runtime as a parent image
-FROM adoptopenjdk:17.0.9_16-jdk-hotspot-bionic
+FROM adoptium/openjdk17:latest
 
 # Set the working directory in the container
 WORKDIR /app
