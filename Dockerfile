@@ -1,11 +1,10 @@
 # Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+FROM openjdk:8-jdk-alpine
 
+VOLUME /tmp
 # Set the working directory in the container
-WORKDIR /usr/src/app
-
-# Copy the JAR file into the container at /usr/src/app
-COPY target/usermanagement-microservice-3.0.0-AWS-XRay-MySQLDB.jar .
+COPY target/*.jar /app.jar
+Expose : 8095
 
 # Specify the default command to run on container start
-CMD ["java", "-jar", "usermanagement-microservice-3.0.0-AWS-XRay-MySQLDB.jar"]
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"
