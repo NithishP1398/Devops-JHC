@@ -4,7 +4,7 @@ FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 # Set the working directory in the container
 COPY target/*.jar /app.jar
-Expose : 8095
+Expose  8095
 
 # Specify the default command to run on container start
 CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"
