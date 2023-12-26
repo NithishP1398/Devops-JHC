@@ -7,5 +7,5 @@ COPY target/*.jar /app.jar
 Expose  8095
 
 # Specify the default command to run on container start
-CMD  ["sh", "-c", "java" ,"$JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar", "/app.jar"]
+CMD  ["java", "$JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar", "/app.jar"]
 
